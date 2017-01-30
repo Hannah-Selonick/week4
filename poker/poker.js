@@ -32,12 +32,13 @@ window.getDeck = function() {
 // END DO NOT CHANGE CODE
 
 $(function() {
-  $("#deal").on("click", function(event) {
+  $(".deal").on("click", function(event) {
     event.preventDefault();
-    $("#c1").attr("src", "http://golearntocode.com/images/cards/" + getDeck(1,13) + ".png");
-    $("#c2").attr("src", "http://golearntocode.com/images/dice/" + getRandomInt(1,6) + ".png");
-    $("#c3").attr("src", "http://golearntocode.com/images/dice/" + getRandomInt(1,6) + ".png");
-    $("#c4").attr("src", "http://golearntocode.com/images/dice/" + getRandomInt(1,6) + ".png");
-    $("#c5").attr("src", "http://golearntocode.com/images/dice/" + getRandomInt(1,6) + ".png");
+    var shuffleDeck = getDeck().shuffle()
+    $("#c1").attr("src", "http://golearntocode.com/images/cards/" + shuffleDeck[0] + ".png");
+    $("#c2").attr("src", "http://golearntocode.com/images/cards/" + shuffleDeck[1] + ".png");
+    $("#c3").attr("src", "http://golearntocode.com/images/cards/" + shuffleDeck[2] + ".png");
+    $("#c4").attr("src", "http://golearntocode.com/images/cards/" + shuffleDeck[3] + ".png");
+    $("#c5").attr("src", "http://golearntocode.com/images/cards/" + shuffleDeck[4] + ".png");
 })
 })
